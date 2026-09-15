@@ -69,7 +69,7 @@ loginButton.addEventListener("click", async () => {
 
         console.log("Logged in user:", data.user);
 
-        // Dashboard will be added next.
+        window.location.href = "dashboard.html";
     }
 
     loginButton.disabled = false;
