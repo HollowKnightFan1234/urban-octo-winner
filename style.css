@@ -407,3 +407,243 @@ button:hover {
     }
 
 }
+/* =========================
+   NOTEBOOK
+   ========================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+}
+
+.primary-button {
+    width: auto;
+    padding: 11px 17px;
+    background: white;
+    color: #111;
+    border-radius: 11px;
+}
+
+.secondary-button {
+    width: auto;
+    padding: 11px 17px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.notebook-toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.notebook-toolbar input {
+    margin: 0;
+    flex: 1;
+}
+
+.notebook-toolbar select {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.note-card {
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.note-card.priority {
+    border-color: rgba(255, 220, 100, 0.4);
+}
+
+.note-priority {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.note-card h3 {
+    margin-bottom: 9px;
+}
+
+.note-preview {
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow: hidden;
+    max-height: 72px;
+}
+
+.note-meta {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.empty-notes {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+}
+
+.note-editor {
+    width: 100%;
+    max-width: 700px;
+    padding: 28px;
+    border-radius: 22px;
+    background: #181c27;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.close-button {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 24px;
+}
+
+.note-title-input {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.note-content-input {
+    width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    padding: 16px;
+    border-radius: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    outline: none;
+}
+
+.editor-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.priority-toggle {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.priority-toggle input {
+    width: auto;
+    margin: 0;
+}
+
+.editor-options > input {
+    flex: 1;
+    margin: 0;
+}
+
+.editor-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.editor-actions-right {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-button {
+    width: auto;
+    padding: 11px 17px;
+    background: rgba(255, 80, 80, 0.15);
+    color: #ff8a8a;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 700px) {
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .notebook-toolbar {
+        flex-direction: column;
+    }
+
+    .editor-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .editor-actions {
+        flex-direction: column-reverse;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .editor-actions-right {
+        width: 100%;
+    }
+
+    .editor-actions-right button,
+    .delete-button {
+        flex: 1;
+    }
+
+}
