@@ -1,1 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>MyHub Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body class="dashboard-body">
+
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <span>MyHub</span>
+            </div>
+
+            <nav class="navigation">
+
+                <button class="nav-item active" data-section="home">
+                    <span>⌂</span>
+                    Home
+                </button>
+
+                <button class="nav-item" data-section="chat">
+                    <span>◉</span>
+                    Chat
+                </button>
+
+                <button class="nav-item" data-section="grades">
+                    <span>▣</span>
+                    Grades
+                </button>
+
+                <button class="nav-item" data-section="reminders">
+                    <span>◷</span>
+                    Reminders
+                </button>
+
+                <button class="nav-item" data-section="notebook">
+                    <span>▤</span>
+                    Notebook
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button class="nav-item" data-section="profile">
+                    <span>●</span>
+                    Profile
+                </button>
+
+                <button class="nav-item" data-section="settings">
+                    <span>⚙</span>
+                    Settings
+                </button>
+
+                <button id="logout-button" class="logout-button">
+                    Log out
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- Main content -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">Dashboard</p>
+                    <h1 id="page-title">Home</h1>
+                </div>
+
+                <div class="user-area">
+                    <span id="user-email"></span>
+                    <div class="avatar">U</div>
+                </div>
+
+            </header>
+
+
+            <!-- HOME -->
+            <section id="home-section" class="page-section active-section">
+
+                <div class="welcome-card">
+
+                    <div>
+                        <p class="eyebrow">Welcome back</p>
+                        <h2>Your school hub.</h2>
+                        <p>
+                            Everything you need in one place.
+                        </p>
+                    </div>
+
+                    <div class="welcome-icon">
+                        ✦
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="dashboard-card">
+
+                        <span class="card-icon">▣</span>
+
+                        <h3>Grades</h3>
+
+                        <p>
+                            Keep track of your subjects, assignments and results.
+                        </p>
+
+                        <button class="card-button" data-section="grades">
+                            View grades
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <span class="card-icon">◷</span>
+
+                        <h3>Reminders</h3>
+
+                        <p>
+                            Stay on top of upcoming assignments and tasks.
+                        </p>
+
+                        <button class="card-button" data-section="reminders">
+                            View reminders
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <span class="card-icon">◉</span>
+
+                        <h3>Chat</h3>
+
+                        <p>
+                            Talk with other people through private and group chats.
+                        </p>
+
+                        <button class="card-button" data-section="chat">
+                            Open chat
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <span class="card-icon">▤</span>
+
+                        <h3>Notebook</h3>
+
+                        <p>
+                            Create and organize your notes.
+                        </p>
+
+                        <button class="card-button" data-section="notebook">
+                            Open notebook
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- OTHER SECTIONS -->
+
+            <section id="chat-section" class="page-section">
+                <h2>Chat</h2>
+                <p>Chat will be built here.</p>
+            </section>
+
+
+            <section id="grades-section" class="page-section">
+                <h2>Grades</h2>
+                <p>Grades will be built here.</p>
+            </section>
+
+
+            <section id="reminders-section" class="page-section">
+                <h2>Reminders</h2>
+                <p>Reminders will be built here.</p>
+            </section>
+
+
+            <section id="notebook-section" class="page-section">
+                <h2>Notebook</h2>
+                <p>Notebook will be built here.</p>
+            </section>
+
+
+            <section id="profile-section" class="page-section">
+                <h2>Profile</h2>
+                <p>Profile will be built here.</p>
+            </section>
+
+
+            <section id="settings-section" class="page-section">
+                <h2>Settings</h2>
+                <p>Settings will be built here.</p>
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
