@@ -251,9 +251,53 @@
 
 
             <section id="grades-section" class="page-section">
-                <h2>Grades</h2>
-                <p>Grades will be built here.</p>
-            </section>
+
+    <div class="section-header">
+        <div>
+            <p class="eyebrow">Academic progress</p>
+            <h2>Grades</h2>
+        </div>
+
+        <button id="new-subject-button" class="primary-button">
+            + New Subject
+        </button>
+    </div>
+
+
+    <div class="grades-toolbar">
+
+        <input
+            type="search"
+            id="grade-search"
+            placeholder="Search subjects or assignments..."
+        >
+
+        <select id="grade-status-filter">
+            <option value="all">All assignments</option>
+            <option value="graded">Graded</option>
+            <option value="not_graded">Not graded</option>
+            <option value="missing">Missing</option>
+            <option value="excused">Excused</option>
+        </select>
+
+    </div>
+
+
+    <div
+        id="subjects-container"
+        class="subjects-container"
+    >
+
+        <div class="empty-notes">
+            <h3>No subjects yet</h3>
+            <p>
+                Create your first subject to start tracking grades.
+            </p>
+        </div>
+
+    </div>
+
+</section>
 
 
             <section id="reminders-section" class="page-section">
