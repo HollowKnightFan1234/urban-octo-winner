@@ -41,6 +41,138 @@ async function checkAuthentication() {
     console.log("Authenticated user:", currentUser);
 
     await loadNotes();
+    // ============================================
+// HOME PRIORITY NOTES
+// ============================================
+
+async function loadHomePriorityNotes() {
+
+    if (!currentUser) {
+        return;
+    }
+
+    const homeContainer =
+        document.getElementById("home-priority-notes");
+
+    const { data, error } = await supabaseClient
+        .from("notes")
+        .select("*")
+        .eq("user_id", currentUser.id)
+        .eq("is_priority", true)
+        .order("updated_at", {
+            ascending: false
+        })
+        .limit(4);
+
+
+    if (error) {
+
+        console.error(
+            "Error loading priority notes:",
+            error
+        );
+
+        homeContainer.innerHTML = `
+            <div class="home-empty-state">
+                <h3>Could not load priority notes</h3>
+                <p>${escapeHtml(error.message)}</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    if (!data || data.length === 0) {
+
+        homeContainer.innerHTML = `
+            <div class="home-empty-state">
+                <h3>No priority notes</h3>
+                <p>
+                    Mark a note as ⭐ Priority and it will appear here.
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    homeContainer.innerHTML = data.map(note => {
+
+        const preview =
+            note.content.length > 150
+                ? note.content.substring(0, 150) + "..."
+                : note.content;
+
+
+        return `
+
+            <article
+                class="home-note-card"
+                data-home-note-id="${note.id}"
+            >
+
+                <div class="home-note-priority">
+                    ⭐ Priority
+                </div>
+
+                <h3>
+                    ${escapeHtml(note.title)}
+                </h3>
+
+                <div class="home-note-preview">
+                    ${escapeHtml(preview)}
+                </div>
+
+                <div class="home-note-folder">
+                    ${escapeHtml(note.folder)}
+                </div>
+
+            </article>
+
+        `;
+
+    }).join("");
+
+
+    document
+        .querySelectorAll("[data-home-note-id]")
+        .forEach(card => {
+
+            card.addEventListener("click", () => {
+
+                const noteId =
+                    card.dataset.homeNoteId;
+
+                const note =
+                    allNotes.find(
+                        item => item.id === noteId
+                    );
+
+                if (note) {
+
+                    openEditor(note);
+
+                } else {
+
+                    // If the note isn't currently in
+                    // allNotes, go to Notebook.
+
+                    document
+                        .querySelector(
+                            '[data-section="notebook"]'
+                        )
+                        .click();
+
+                }
+
+            });
+
+        });
+
+}
+await loadHomePriorityNotes();
 }
 
 
@@ -411,6 +543,7 @@ saveNoteButton.addEventListener("click", async () => {
         closeEditor();
 
         await loadNotes();
+        await loadHomePriorityNotes();
 
     }
 
