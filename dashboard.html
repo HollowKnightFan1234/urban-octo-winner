@@ -205,10 +205,141 @@
             </section>
 
 
-            <section id="notebook-section" class="page-section">
-                <h2>Notebook</h2>
-                <p>Notebook will be built here.</p>
-            </section>
+           <section id="notebook-section" class="page-section">
+
+    <div class="section-header">
+
+        <div>
+            <p class="eyebrow">Your notes</p>
+            <h2>Notebook</h2>
+        </div>
+
+        <button id="new-note-button" class="primary-button">
+            + New Note
+        </button>
+
+    </div>
+
+
+    <div class="notebook-toolbar">
+
+        <input
+            type="search"
+            id="note-search"
+            placeholder="Search notes..."
+        >
+
+        <select id="note-filter">
+            <option value="all">All notes</option>
+            <option value="priority">⭐ Priority</option>
+        </select>
+
+    </div>
+
+
+    <div id="notes-container" class="notes-container">
+
+        <div class="empty-notes">
+            <h3>No notes yet</h3>
+            <p>Create your first note.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Note editor -->
+
+<div id="note-editor-overlay" class="modal-overlay hidden">
+
+    <div class="note-editor">
+
+        <div class="editor-header">
+
+            <h2 id="editor-title">New Note</h2>
+
+            <button
+                id="close-editor-button"
+                class="close-button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="note-title"
+            class="note-title-input"
+            placeholder="Note title"
+        >
+
+
+        <textarea
+            id="note-content"
+            class="note-content-input"
+            placeholder="Start writing..."
+        ></textarea>
+
+
+        <div class="editor-options">
+
+            <label class="priority-toggle">
+
+                <input
+                    type="checkbox"
+                    id="note-priority"
+                >
+
+                <span>⭐ Priority</span>
+
+            </label>
+
+
+            <input
+                type="text"
+                id="note-folder"
+                placeholder="Folder"
+                value="General"
+            >
+
+        </div>
+
+
+        <div class="editor-actions">
+
+            <button
+                id="delete-note-button"
+                class="delete-button hidden"
+            >
+                Delete
+            </button>
+
+            <div class="editor-actions-right">
+
+                <button
+                    id="cancel-note-button"
+                    class="secondary-button"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="save-note-button"
+                    class="primary-button"
+                >
+                    Save Note
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 
             <section id="profile-section" class="page-section">
