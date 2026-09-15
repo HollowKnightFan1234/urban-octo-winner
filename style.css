@@ -748,3 +748,136 @@ button:hover {
     }
 
 }
+/* =========================
+   GRADES
+   ========================= */
+
+.grades-toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.grades-toolbar input,
+.grades-toolbar select {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    outline: none;
+}
+
+.grades-toolbar input {
+    flex: 1;
+}
+
+.grades-toolbar select {
+    min-width: 180px;
+}
+
+.grades-toolbar input:focus,
+.grades-toolbar select:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.subjects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subject-card {
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subject-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.subject-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subject-title h3 {
+    margin: 0;
+}
+
+.subject-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.small-button {
+    width: auto;
+    padding: 7px 11px;
+    font-size: 12px;
+}
+
+.assignments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.assignment-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 14px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.assignment-name {
+    font-weight: 500;
+}
+
+.assignment-grade {
+    font-weight: 600;
+}
+
+.assignment-status {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.subject-average {
+    margin-top: 16px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.no-assignments {
+    padding: 15px 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+
+    .grades-toolbar {
+        flex-direction: column;
+    }
+
+    .grades-toolbar select {
+        width: 100%;
+    }
+
+    .assignment-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+}
