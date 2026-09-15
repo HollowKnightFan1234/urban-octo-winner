@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+    <main class="auth-container">
+
+        <!-- Access Gate -->
+        <section id="access-screen" class="auth-card">
+
+            <div class="logo">✦</div>
+
+            <h1>MyHub</h1>
+
+            <p class="subtitle">
+                Private access
+            </p>
+
+            <label for="access-password">
+                Access password
+            </label>
+
+            <input
+                type="password"
+                id="access-password"
+                placeholder="Enter access password"
+                autocomplete="off"
+            >
+
+            <button id="access-button">
+                Continue
+            </button>
+
+            <p id="access-error" class="error"></p>
+
+        </section>
+
+
+        <!-- Login -->
+        <section id="login-screen" class="auth-card hidden">
+
+            <div class="logo">✦</div>
+
+            <h1>Welcome back</h1>
+
+            <p class="subtitle">
+                Sign in to continue
+            </p>
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+            >
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                autocomplete="current-password"
+            >
+
+            <button id="login-button">
+                Log in
+            </button>
+
+            <p id="login-message" class="message"></p>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
